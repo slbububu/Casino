@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Numerics;
+using System.Data;
 
 namespace Casino
 {
@@ -21,6 +22,8 @@ namespace Casino
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static Canvas GameCanvas;
+        public static string selectedHra = "menu";
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +33,9 @@ namespace Casino
             WindowStyle = WindowStyle.None;
             WindowState = WindowState.Maximized;
             ResizeMode = ResizeMode.NoResize;
+
+            //dela veci v MainWindow.xaml pristupne i od jinud nez od tud
+            GameCanvas = canvas;
         }
 
         DateTime lastFrameTime = DateTime.Now;
@@ -45,14 +51,45 @@ namespace Casino
         }
         private void Update()
         {
+            if(Keyboard.IsKeyDown(Key.Escape))
+                selectedHra = "menu"; // escape to menu
 
+            switch (selectedHra)
+            {
+                case "menu":
+                    Menu.Update();
+                    break;
+                case "ruleta":
+                    Ruleta.Update();
+                    break;
+                case "blackJack":
+                    BlackJack.Update();
+                    break;
+                case "automaty":
+                    Automaty.Update();
+                    break;
+            }
         }
         private void Render()
         {
             canvas.Children.Clear(); // background clear +-
 
-            Draw.RenderImage("Assets/ball.png", new Vector2(100, 200), new Vector2(64, 64), 45f);
 
+            switch (selectedHra)
+            {
+                case "menu":
+                    Menu.Render();
+                    break;                    
+                case "ruleta":
+                    Ruleta.Render();
+                    break;
+                case "blackJack":
+                    BlackJack.Render();
+                    break;
+                case "automaty":
+                    Automaty.Render();
+                    break;
+            }
         }
         private void DeltaTime()
         {
@@ -63,6 +100,28 @@ namespace Casino
             //deltaTime = 0.1;
 
             toralTime += deltaTime;
+        }
+
+        private void canvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            System.Windows.Point clickPosPOINT = e.GetPosition(GameCanvas);
+            Vector2 clickPos = new Vector2((float)clickPosPOINT.X, (float)clickPosPOINT.Y);
+
+            switch (selectedHra)
+            {
+                case "menu":
+                    Menu.LeftClick(clickPos);
+                    break;                    
+                case "ruleta":
+                    Ruleta.LeftClick(clickPos);
+                    break;
+                case "blackJack":
+                    BlackJack.LeftClick(clickPos);
+                    break;
+                case "automaty":
+                    Automaty.LeftClick(clickPos);
+                    break;
+            }
         }
     }
 }

@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920">
     <Grid>
-        <Canvas x:Name="canvas" Background="Black"/>
+        <Canvas x:Name="canvas" Background="Black" MouseLeftButtonDown="canvas_MouseLeftButtonDown"/>
     </Grid>
 </Window>

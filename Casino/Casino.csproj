@@ -9,7 +9,31 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\" />
+    <Compile Remove="Assets\Enemies\**" />
+    <Compile Remove="Assets\Upgrades\**" />
+    <EmbeddedResource Remove="Assets\Enemies\**" />
+    <EmbeddedResource Remove="Assets\Upgrades\**" />
+    <None Remove="Assets\Enemies\**" />
+    <None Remove="Assets\Upgrades\**" />
+    <Page Remove="Assets\Enemies\**" />
+    <Page Remove="Assets\Upgrades\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\automaty.png" />
+    <None Remove="Assets\Background.png" />
+    <None Remove="Assets\ball.png" />
+    <None Remove="Assets\blackJack.png" />
+    <None Remove="Assets\loseScreen.png" />
+    <None Remove="Assets\ruleta.png" />
+    <None Remove="Assets\victoryScreen.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\automaty.png" />
+    <Resource Include="Assets\background.png" />
+    <Resource Include="Assets\blackJack.png" />
+    <Resource Include="Assets\ruleta.png" />
   </ItemGroup>
 
 </Project>
