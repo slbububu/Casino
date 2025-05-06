@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
+using System.Windows;
+using System.Net.NetworkInformation;
 
 namespace Casino
 {
@@ -49,6 +51,29 @@ namespace Casino
 
             // srci to na canvas
             MainWindow.GameCanvas.Children.Add(img);
+        }
+        public static void RenderLabel(string text, Vector2 position, Vector2 size, float fontSize = 14f, Vector3 textColor = default, Vector3 backgroundColor = default)
+        {
+            // Vytvoření labelu
+            Label label = new Label
+            {
+                Content = text,
+                Width = size.X,
+                Height = size.Y,
+                FontSize = fontSize,
+                Foreground = new SolidColorBrush(Color.FromRgb((byte)textColor.X, (byte)textColor.Y, (byte)textColor.Z)),
+                Background = new SolidColorBrush(Color.FromRgb((byte)backgroundColor.X, (byte)backgroundColor.Y, (byte)backgroundColor.Z)),
+                HorizontalContentAlignment = HorizontalAlignment.Center,
+                VerticalContentAlignment = VerticalAlignment.Center,
+                IsHitTestVisible = false // Aby label nezabíral interaktivní plochu
+            };
+
+            // Nastavení pozice na canvasu
+            Canvas.SetLeft(label, position.X - size.X / 2);
+            Canvas.SetBottom(label, position.Y - size.Y / 2);
+
+            // Přidání labelu na canvas
+            MainWindow.GameCanvas.Children.Add(label);
         }
     }
 }

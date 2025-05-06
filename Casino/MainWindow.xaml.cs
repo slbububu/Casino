@@ -43,6 +43,7 @@ namespace Casino
         public static double toralTime = 0;
         bool gamePaused = false;
         bool gamePausedCahnged = false;
+        public static int money = 10000;
         private void GameLoop(object sender, EventArgs e)
         {
             DeltaTime();
@@ -74,7 +75,6 @@ namespace Casino
         {
             canvas.Children.Clear(); // background clear +-
 
-
             switch (selectedHra)
             {
                 case "menu":
@@ -90,6 +90,17 @@ namespace Casino
                     Automaty.Render();
                     break;
             }
+
+            Vector2 position = new Vector2(SF.SW-150, 100);
+            Vector2 size = new Vector2(250, 100);
+            float fontSize = 50;
+
+            // RGB barvy jako Vector3
+            Vector3 textColor = new Vector3(0, 0, 0);
+            Vector3 backgroundColor = new Vector3(255, 255, 0);
+
+            // Vytvoření labelu na obrazovce
+            Draw.RenderLabel(money.ToString() + "$", position, size, fontSize, textColor, backgroundColor);
         }
         private void DeltaTime()
         {
