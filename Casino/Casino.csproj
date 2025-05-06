@@ -28,6 +28,7 @@
     <None Remove="Assets\Automaty\diamond.png" />
     <None Remove="Assets\Automaty\lemon.png" />
     <None Remove="Assets\Automaty\mixing-asi nepotrebne-animaci muzes lepsi udelat s individualnimi obrazky.png" />
+    <None Remove="Assets\Automaty\slotMachine.png" />
     <None Remove="Assets\Background.png" />
     <None Remove="Assets\ball.png" />
     <None Remove="Assets\blackJack.png" />
@@ -46,6 +47,7 @@
     <Resource Include="Assets\Automaty\diamond.png" />
     <Resource Include="Assets\Automaty\lemon.png" />
     <Resource Include="Assets\Automaty\mixing-asi nepotrebne-animaci muzes lepsi udelat s individualnimi obrazky.png" />
+    <Resource Include="Assets\Automaty\slotMachine.png" />
     <Resource Include="Assets\background.png" />
     <Resource Include="Assets\BlackJack\blackJack.png" />
     <Resource Include="Assets\Ruleta\ruleta.png" />

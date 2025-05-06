@@ -15,7 +15,7 @@ namespace Casino
         }
         public static void Render()
         {
-            Draw.RenderImage("Assets/BlackJack/blackJack.png", new Vector2(SF.SW / 2, SF.SH / 2), new Vector2(SF.SW, SF.SH));
+            Draw.RenderLabel("", new Vector2(SF.SW / 2, SF.SH / 2), new Vector2(SF.SW, SF.SH), 10, new Vector3(0, 0, 0), new Vector3(2, 114, 171));//pozadi
         }
         public static void LeftClick(Vector2 clickPos)
         {
