@@ -22,7 +22,7 @@ namespace Casino
 
         /// <summary>
         /// pokud ti tato funkce nefunguje na tvuj novy obrazek tak to spravis takto. 
-        /// Klikni v "solutin exploreru" na nefungujici obrazek a v "properties" nastav "Build Action" na "Resource"
+        /// Klikni v "solutin exploreru" na nefungujici obrazek a v "properties" nastav "Build Action" na "Resource"/"Zdroj"
         /// </summary>
         public static void RenderImage(string filePath, Vector2 position, Vector2 size, float rotation = 0f)
         {

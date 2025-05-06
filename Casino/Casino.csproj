@@ -21,19 +21,34 @@
 
   <ItemGroup>
     <None Remove="Assets\automaty.png" />
+    <None Remove="Assets\Automaty\7.png" />
+    <None Remove="Assets\Automaty\apple.png" />
+    <None Remove="Assets\Automaty\automaty.png" />
+    <None Remove="Assets\Automaty\berry.png" />
+    <None Remove="Assets\Automaty\diamond.png" />
+    <None Remove="Assets\Automaty\lemon.png" />
+    <None Remove="Assets\Automaty\mixing-asi nepotrebne-animaci muzes lepsi udelat s individualnimi obrazky.png" />
     <None Remove="Assets\Background.png" />
     <None Remove="Assets\ball.png" />
     <None Remove="Assets\blackJack.png" />
+    <None Remove="Assets\BlackJack\blackJack.png" />
     <None Remove="Assets\loseScreen.png" />
     <None Remove="Assets\ruleta.png" />
+    <None Remove="Assets\Ruleta\ruleta.png" />
     <None Remove="Assets\victoryScreen.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\automaty.png" />
+    <Resource Include="Assets\Automaty\7.png" />
+    <Resource Include="Assets\Automaty\apple.png" />
+    <Resource Include="Assets\Automaty\automaty.png" />
+    <Resource Include="Assets\Automaty\berry.png" />
+    <Resource Include="Assets\Automaty\diamond.png" />
+    <Resource Include="Assets\Automaty\lemon.png" />
+    <Resource Include="Assets\Automaty\mixing-asi nepotrebne-animaci muzes lepsi udelat s individualnimi obrazky.png" />
     <Resource Include="Assets\background.png" />
-    <Resource Include="Assets\blackJack.png" />
-    <Resource Include="Assets\ruleta.png" />
+    <Resource Include="Assets\BlackJack\blackJack.png" />
+    <Resource Include="Assets\Ruleta\ruleta.png" />
   </ItemGroup>
 
 </Project>

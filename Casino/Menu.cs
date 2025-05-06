@@ -25,9 +25,9 @@ namespace Casino
             Draw.RenderImage("Assets/background.png", new Vector2(SF.SW / 2, SF.SH / 2), new Vector2(SF.SW, SF.SH));
 
             float curentTilt = (float)Math.Sin(MainWindow.toralTime * tiltSpeed) * tiltAmount;
-            Draw.RenderImage("Assets/ruleta.png", ruletaPos, iconSize, curentTilt);
-            Draw.RenderImage("Assets/blackJack.png", blackJackPos, iconSize, curentTilt);
-            Draw.RenderImage("Assets/automaty.png", automatyPos, iconSize, curentTilt);
+            Draw.RenderImage("Assets/Ruleta/ruleta.png", ruletaPos, iconSize, curentTilt);
+            Draw.RenderImage("Assets/BlackJack/blackJack.png", blackJackPos, iconSize, curentTilt);
+            Draw.RenderImage("Assets/Automaty/automaty.png", automatyPos, iconSize, curentTilt);
         }
         public static void LeftClick(Vector2 clickPos)
         {
