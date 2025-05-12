@@ -49,6 +49,7 @@ namespace Casino
         static double moneyFlashTime = 0;
         static Vector3 moneyFlashColor = Vector3.Zero;
         static public bool canEscape = true;
+        static int moneyChange = 0;
         public static int Money
         {
             get => money; set
@@ -63,6 +64,8 @@ namespace Casino
                     moneyFlashTime = 0.5;
                     moneyFlashColor = new Vector3(255, 0, 0);//red
                 }
+
+                moneyChange = value - money;
 
                 money = value;
             }
@@ -170,12 +173,15 @@ namespace Casino
 
             // RGB barvy jako Vector3
             Vector3 textColor = new Vector3(0, 0, 0);
-            if (moneyFlashTime > 0) 
-                textColor = moneyFlashColor;
             Vector3 backgroundColor = new Vector3(255, 255, 0);
 
             // Vytvoření labelu na obrazovce
-            Draw.RenderLabel(Money.ToString() + "$", position, size, fontSize, textColor, backgroundColor);
+            Draw.RenderLabel(Money.ToString() + "$", position, size, fontSize, new Vector3(0, 0, 0), backgroundColor);
+
+            if (moneyFlashTime > 0)
+            {
+                Draw.RenderLabel(moneyChange.ToString() + "$", new Vector2(position.X, position.Y + (int)(size.Y * 1.1)), size, fontSize, moneyFlashColor, backgroundColor);
+            }
         }
     }
 }

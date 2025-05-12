@@ -107,7 +107,7 @@ namespace Casino
                             break;
                     }
                 }
-                if(slotdrop[0] == "berry") MainWindow.Money += (int)(CostToPlay * 0.1);
+                else if(slotdrop[0] == "berry") MainWindow.Money += (int)(CostToPlay * 0.1); //pokud prvni slot cherry
             }
 
         }
