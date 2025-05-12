@@ -56,7 +56,7 @@ namespace Casino
             {
                 if (value > money)
                 {
-                    moneyFlashTime = 0.8;
+                    moneyFlashTime = 1.2;
                     moneyFlashColor = new Vector3(0, 158, 47);//green
                 }
                 else if (value < money)
