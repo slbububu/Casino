@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Numerics;
 using System.Data;
+using Casino.Baseball;
 
 namespace Casino
 {
@@ -47,6 +48,7 @@ namespace Casino
         static int money = 10000;
         static double moneyFlashTime = 0;
         static Vector3 moneyFlashColor = Vector3.Zero;
+        static public bool canEscape = true;
         public static int Money
         {
             get => money; set
@@ -73,9 +75,7 @@ namespace Casino
         }
         private void Update()
         {
-            if(Keyboard.IsKeyDown(Key.Escape)) selectedHra = "menu"; // escape to menu
-            if (Keyboard.IsKeyDown(Key.E)) Money += 10;
-            if (Keyboard.IsKeyDown(Key.Q)) Money -= 10;
+            canEscape = true;
 
             switch (selectedHra)
             {
@@ -85,13 +85,20 @@ namespace Casino
                 case "ruleta":
                     Ruleta.Update();
                     break;
-                case "blackJack":
-                    BlackJack.Update();
+                case "epicGameMenu":
+                    EpicGameMenu.Update();
                     break;
                 case "automaty":
                     Automaty.Update();
                     break;
+                case "baseball":
+                    BaseballMain.Update();
+                    break;
             }
+
+            if (canEscape && Keyboard.IsKeyDown(Key.Escape)) selectedHra = "menu"; // escape to menu
+            if (Keyboard.IsKeyDown(Key.E)) Money += 10; //testing
+            if (Keyboard.IsKeyDown(Key.Q)) Money -= 10;
 
             moneyFlashTime -= deltaTime; //money Colour
         }
@@ -107,11 +114,14 @@ namespace Casino
                 case "ruleta":
                     Ruleta.Render();
                     break;
-                case "blackJack":
-                    BlackJack.Render();
+                case "epicGameMenu":
+                    EpicGameMenu.Render();
                     break;
                 case "automaty":
                     Automaty.Render();
+                    break;
+                case "baseball":
+                    BaseballMain.Render();
                     break;
             }
 
@@ -141,11 +151,14 @@ namespace Casino
                 case "ruleta":
                     Ruleta.LeftClick(clickPos);
                     break;
-                case "blackJack":
-                    BlackJack.LeftClick(clickPos);
+                case "epicGameMenu":
+                    EpicGameMenu.LeftClick(clickPos);
                     break;
                 case "automaty":
                     Automaty.LeftClick(clickPos);
+                    break;
+                case "baseball":
+                    BaseballMain.LeftClick(clickPos);
                     break;
             }
         }

@@ -13,7 +13,7 @@ namespace Casino
         private static float tiltAmount = 10f;
         private static Vector2 iconSize = new Vector2(400, 400);
         private static Vector2 ruletaPos = new Vector2(SF.SW / 4, SF.SH / 2);
-        private static Vector2 blackJackPos = new Vector2(SF.SW * 2 / 4, SF.SH / 2);
+        private static Vector2 EpicGamePos = new Vector2(SF.SW * 2 / 4, SF.SH / 2);
         private static Vector2 automatyPos = new Vector2(SF.SW * 3 / 4, SF.SH / 2);
 
         public static void Update()
@@ -26,13 +26,13 @@ namespace Casino
 
             float curentTilt = (float)Math.Sin(MainWindow.toralTime * tiltSpeed) * tiltAmount;
             Draw.RenderImage("Assets/Ruleta/ruleta.png", ruletaPos, iconSize, curentTilt);
-            Draw.RenderImage("Assets/BlackJack/blackJack.png", blackJackPos, iconSize, curentTilt);
+            Draw.RenderImage("Assets/EpicGame/EpicGame.png", EpicGamePos, iconSize, curentTilt);
             Draw.RenderImage("Assets/Automaty/automaty.png", automatyPos, iconSize, curentTilt);
         }
         public static void LeftClick(Vector2 clickPos)
         {
             if(SF.DidIClick(clickPos, ruletaPos,iconSize)) MainWindow.selectedHra = "ruleta";
-            if(SF.DidIClick(clickPos, blackJackPos, iconSize)) MainWindow.selectedHra = "blackJack";
+            if(SF.DidIClick(clickPos, EpicGamePos, iconSize)) MainWindow.selectedHra = "epicGameMenu";
             if(SF.DidIClick(clickPos, automatyPos, iconSize)) MainWindow.selectedHra = "automaty";
         }
     }

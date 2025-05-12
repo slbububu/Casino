@@ -13,6 +13,7 @@ namespace Casino
         static Vector2 SPINsize = new Vector2(300, 300);
 
         static double spinning = 0;
+        static double delkaSpinu = 5; // v sekundach
         static bool spinningLastFrame = false;
         public static void Update()
         {
@@ -27,6 +28,7 @@ namespace Casino
             {
                 spinningLastFrame = true;
                 //toceni
+
 
             }
             else if (spinningLastFrame)
@@ -47,7 +49,7 @@ namespace Casino
         {
             if(SF.DidIClick(clickPos, SPINpos, SPINsize))
             {
-                spinning = 5;
+                spinning = delkaSpinu;
             }
         }
     }

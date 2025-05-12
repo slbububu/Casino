@@ -9,13 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Assets\Enemies\**" />
     <Compile Remove="Assets\Upgrades\**" />
-    <EmbeddedResource Remove="Assets\Enemies\**" />
     <EmbeddedResource Remove="Assets\Upgrades\**" />
-    <None Remove="Assets\Enemies\**" />
     <None Remove="Assets\Upgrades\**" />
-    <Page Remove="Assets\Enemies\**" />
     <Page Remove="Assets\Upgrades\**" />
   </ItemGroup>
 
@@ -32,7 +28,12 @@
     <None Remove="Assets\Background.png" />
     <None Remove="Assets\ball.png" />
     <None Remove="Assets\blackJack.png" />
-    <None Remove="Assets\BlackJack\blackJack.png" />
+    <None Remove="Assets\Enemies\downSyndrom.png" />
+    <None Remove="Assets\Enemies\funnyGuy.png" />
+    <None Remove="Assets\Enemies\neexistujici.png" />
+    <None Remove="Assets\Enemies\steve.png" />
+    <None Remove="Assets\Enemies\terrorist.png" />
+    <None Remove="Assets\Enemies\tunSahur.png" />
     <None Remove="Assets\loseScreen.png" />
     <None Remove="Assets\ruleta.png" />
     <None Remove="Assets\Ruleta\ruleta.png" />
@@ -49,7 +50,13 @@
     <Resource Include="Assets\Automaty\mixing-asi nepotrebne-animaci muzes lepsi udelat s individualnimi obrazky.png" />
     <Resource Include="Assets\Automaty\slotMachine.png" />
     <Resource Include="Assets\background.png" />
-    <Resource Include="Assets\BlackJack\blackJack.png" />
+    <Resource Include="Assets\Enemies\downSyndrom.png" />
+    <Resource Include="Assets\Enemies\funnyGuy.png" />
+    <Resource Include="Assets\Enemies\neexistujici.png" />
+    <Resource Include="Assets\Enemies\steve.png" />
+    <Resource Include="Assets\Enemies\terrorist.png" />
+    <Resource Include="Assets\Enemies\tunSahur.png" />
+    <Resource Include="Assets\EpicGame\EpicGame.png" />
     <Resource Include="Assets\Ruleta\ruleta.png" />
   </ItemGroup>
 
