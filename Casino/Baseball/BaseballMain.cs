@@ -40,6 +40,8 @@ namespace Casino.Baseball
         }
         public static void LeftClick(Vector2 clickPos)
         {
+            Vector2 pos = new Vector2(clickPos.X,clickPos.Y);
+
             Pich.Swing(clickPos);
         }
         public static void SetDifficulty(float throwTime, short oponentCurent,float rewardMult)

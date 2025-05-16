@@ -154,7 +154,8 @@ namespace Casino
         private void canvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             System.Windows.Point clickPosPOINT = e.GetPosition(GameCanvas);
-            Vector2 clickPos = new Vector2((float)clickPosPOINT.X, (float)clickPosPOINT.Y);
+            Vector2 clickPos = new Vector2((float)clickPosPOINT.X, SF.SH - (float)clickPosPOINT.Y);
+            Vector2 clickPosAsGiven = new Vector2((float)clickPosPOINT.X, (float)clickPosPOINT.Y);
 
             switch (selectedHra)
             {
@@ -171,7 +172,7 @@ namespace Casino
                     Automaty.LeftClick(clickPos);
                     break;
                 case "baseball":
-                    BaseballMain.LeftClick(clickPos);
+                    BaseballMain.LeftClick(clickPosAsGiven);
                     break;
             }
         }

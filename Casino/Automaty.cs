@@ -124,7 +124,6 @@ namespace Casino
         }
         public static void LeftClick(Vector2 clickPos)
         {
-
             if(SF.DidIClick(clickPos, SPINpos, SPINsize))
             {            
                 if (spinning > -breakPosSpinu) return;
