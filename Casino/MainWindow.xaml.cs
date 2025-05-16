@@ -37,6 +37,9 @@ namespace Casino
 
             //dela veci v MainWindow.xaml pristupne i od jinud nez od tud
             GameCanvas = canvas;
+
+            //initialization metody metody
+            Ruleta.Setup();
         }
 
         DateTime lastFrameTime = DateTime.Now;
@@ -101,9 +104,16 @@ namespace Casino
 
             if (canEscape && Keyboard.IsKeyDown(Key.Escape)) selectedHra = "menu"; // escape to menu
             if (Keyboard.IsKeyDown(Key.E)) Money += 10; //testing
-            if (Keyboard.IsKeyDown(Key.Q)) Money -= 10;
+            if (Keyboard.IsKeyDown(Key.Q)) Money -= 10; //testing
 
-            moneyFlashTime -= deltaTime; //money Colour
+            if (Keyboard.IsKeyDown(Key.P)) //testing
+            {
+                Automaty.breakPosSpinu = 0; //testing
+                Automaty.delkaSpinu = 0;//testing
+            }
+
+
+                moneyFlashTime -= deltaTime; //money Colour
         }
         private void Render()
         {

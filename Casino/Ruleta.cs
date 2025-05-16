@@ -9,9 +9,14 @@ namespace Casino
 {
     public static class Ruleta
     {
+        static Vector2[] cisla;
+        public static void Setup()
+        {
+
+        }
         public static void Update()
         {
-            
+
         }
         public static void Render()
         {

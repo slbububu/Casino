@@ -18,16 +18,20 @@ namespace Casino
         static Vector2 SPINpos = new Vector2(SF.SW-200, SF.SH/2);
         static Vector2 SPINsize = new Vector2(300, 300);
 
-        static double spinning = 0;
-        static double delkaSpinu = 1; // v sekundach
+        static double spinning = -1;
+        public static double delkaSpinu = 1; // v sekundach
+        public static double breakPosSpinu = 0.15;
         static bool spinningLastFrame = false; // je vyuzito pro zjisteni Last Frame
         private static int costToPlay = 100;
         public static int CostToPlay { get => costToPlay; }
 
         public static void Update()
-        {
-            spinning -= MainWindow.deltaTime;
-            if (spinning > 0)
+        {        
+            //breakPosSpinu = 0; //testing
+            //delkaSpinu = 0;//testing
+
+
+            if (spinning >= 0)
             {
                 spinningLastFrame = true;
                 //toceni
@@ -66,19 +70,15 @@ namespace Casino
                     switch(slotdrop[0])
                     {
                         case "7": 
-                            MainWindow.Money += CostToPlay * 10;
+                            MainWindow.Money += CostToPlay * 20;
                             break;
                         case "diamond":
-                            MainWindow.Money += CostToPlay * 5;
+                            MainWindow.Money += CostToPlay * 10;
                             break;
                         case "berry":
-                            MainWindow.Money += CostToPlay * 3;
-                            break;
-                        case "apple":
-                            MainWindow.Money += CostToPlay * 3;
-                            break;
                         case "lemon":
-                            MainWindow.Money += CostToPlay * 3;
+                        case "apple":
+                            MainWindow.Money += CostToPlay * 5;
                             break;
                     }
                 }
@@ -91,17 +91,13 @@ namespace Casino
                     switch (doubledItemName)
                     {
                         case "7": 
-                            MainWindow.Money += CostToPlay * 3;
+                            MainWindow.Money += CostToPlay * 5;
                             break;
                         case "diamond":
                             MainWindow.Money += CostToPlay * 2;
                             break;
                         case "berry":
-                            MainWindow.Money += CostToPlay * 1;
-                            break;
                         case "apple":
-                            MainWindow.Money += CostToPlay * 1;
-                            break;
                         case "lemon":
                             MainWindow.Money += CostToPlay * 1;
                             break;
@@ -109,7 +105,7 @@ namespace Casino
                 }
                 else if(slotdrop[0] == "berry") MainWindow.Money += (int)(CostToPlay * 0.1); //pokud prvni slot cherry
             }
-
+            spinning -= MainWindow.deltaTime;
         }
         public static void Render()
         {
@@ -131,9 +127,10 @@ namespace Casino
 
             if(SF.DidIClick(clickPos, SPINpos, SPINsize))
             {            
-                if (spinning > -0.15f) return;
+                if (spinning > -breakPosSpinu) return;
 
                 spinning = delkaSpinu;
+                spinningLastFrame = true;
                 MainWindow.Money -= CostToPlay;
             }
         }
